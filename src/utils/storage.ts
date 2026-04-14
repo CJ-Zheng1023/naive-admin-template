@@ -1,0 +1,40 @@
+import config from '@/config'
+// 默认过期时间
+const createStorage = ({ prefix = '', storage = localStorage }) => {
+  class Storage {
+    #storage = storage
+    #prefix = prefix
+    #genKey(key: string) {
+      return `${this.#prefix}-${key}`
+    }
+    // expire为null时永久持久化
+    set(key: string, value: any, expire: number | null = null) {
+      const timestamp = expire ? +new Date() + expire * 1000 : null
+      this.#storage.setItem(
+        this.#genKey(key),
+        JSON.stringify({
+          value,
+          timestamp
+        })
+      )
+    }
+    get<T extends Object>(key: string) {
+      const dataStr = this.#storage.getItem(this.#genKey(key))
+      if (!dataStr) {
+        return null
+      }
+      const { value, timestamp } = JSON.parse(dataStr)
+      if (timestamp === null || timestamp > +new Date()) {
+        return value as T
+      } else {
+        this.remove(key)
+        return null
+      }
+    }
+    remove(key: string) {
+      this.#storage.removeItem(this.#genKey(key))
+    }
+  }
+  return new Storage()
+}
+export const storage = createStorage({ prefix: config.cachePrefix })

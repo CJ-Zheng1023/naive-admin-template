@@ -1,0 +1,19 @@
+.clearfix() {
+  &::before {
+    content: "";
+    display: table;
+  }
+
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+.flex(@algin, @justify: flex-start, @direction: row, @wrap: nowrap) {
+  display: flex;
+  align-items: @algin;
+  justify-content: @justify;
+  flex-direction: @direction;
+  flex-wrap: @wrap;
+}
