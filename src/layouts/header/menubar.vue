@@ -204,7 +204,8 @@ const cThemeVars = useCustomThemeVars()
   color: v-bind('cThemeVars.common.textColor');
   height: 100%;
   position: relative;
-  padding: 0 30px;
+  padding: 0 40px;
+  border-bottom: 1px dashed v-bind('cThemeVars.common.borderColor');
   .prev, .next{
     position: absolute;
     top: 50%;

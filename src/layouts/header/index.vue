@@ -35,7 +35,6 @@ const cThemeVars = useCustomThemeVars()
   }
   .menu{
     height: @headerHeight - @navHeight;
-    padding: 0 10px;
   }
 }
 </style>
