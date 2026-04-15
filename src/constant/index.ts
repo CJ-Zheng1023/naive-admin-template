@@ -1,9 +1,9 @@
 import type { GlobalThemeOverrides } from 'naive-ui'
 import { darkToLightColor, generateColor } from '@/utils/lib'
-const DARK_PRIMARY_COLOR = '#22d3ee'
-const DARK_SUCCESS_COLOR = '#00ff88'
-const DARK_WARNING_COLOR = '#ff8800'
-const DARK_ERROR_COLOR = '#ff4444'
+export const DARK_PRIMARY_COLOR = '#22d3ee'
+export const DARK_SUCCESS_COLOR = '#00ff88'
+export const DARK_WARNING_COLOR = '#ff8800'
+export const DARK_ERROR_COLOR = '#ff4444'
 const LIGHT_PRIMARY_COLOR = darkToLightColor(DARK_PRIMARY_COLOR)
 const LIGHT_SUCCESS_COLOR = darkToLightColor(DARK_SUCCESS_COLOR)
 const LIGHT_WARNING_COLOR = darkToLightColor(DARK_WARNING_COLOR)
@@ -41,10 +41,11 @@ export const lightThemeOverrides: GlobalThemeOverrides = {
   DataTable: {
     tdColor: '#fff',
     borderColor: 'rgb(228, 230, 239)',
-    thColor: '#fff',
+    thColor: '#f9fafb',
     tdColorHover: '#fff',
-    thColorHover: '#fff',
-    paginationMargin: '12px'
+    thColorHover: '#f9fafb',
+    paginationMargin: '12px',
+    thTextColor: '#6b7280'
   },
   Menu: {
     itemColorHover: 'rgba(255, 255, 255, 0.09)',
@@ -82,10 +83,11 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
   DataTable: {
     tdColor: 'rgb(30, 30, 45)',
     borderColor: 'rgb(50, 50, 72)',
-    thColor: 'rgb(30, 30, 45)',
+    thColor: '#ffffff05',
     tdColorHover: 'rgb(30, 30, 45)',
-    thColorHover: 'rgb(30, 30, 45)',
-    paginationMargin: '12px'
+    thColorHover: '#ffffff05',
+    paginationMargin: '12px',
+    thTextColor: '#6b7280'
   },
   Menu: {
     fontSize: '16px',
