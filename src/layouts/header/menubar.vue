@@ -173,9 +173,9 @@ const handleSelect = (key: string) => {
   }
   let pages: Page[] = []
   if (key === CLOSE_LEFT) {
-    pages = openedPages.value.slice(0, index)
+    pages = openedPages.value.slice(index)
   } else if (key === CLOSE_RIGHT) {
-    pages = openedPages.value.slice(index + 1)
+    pages = openedPages.value.slice(0, index + 1)
   } else if (key === CLOSE_OTHER) {
     pages = [curTag.value]
     router.push(curTag.value.fullPath)

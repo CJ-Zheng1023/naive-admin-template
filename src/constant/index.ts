@@ -54,7 +54,8 @@ export const lightThemeOverrides: GlobalThemeOverrides = {
     itemTextColorHover: '#fff',
     itemIconColorHover: '#fff',
     fontSize: '16px',
-    itemHeight: '36px'
+    itemHeight: '36px',
+    itemIconColorCollapsed: '#9D9DA6'
   }
 }
 // dark主题样式重置
@@ -99,5 +100,8 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
   Switch: {
     iconColor: '#fff',
     buttonColor: '#1e1e2d'
+  },
+  Card: {
+    colorModal: 'rgb(30, 30, 45)'
   }
 }

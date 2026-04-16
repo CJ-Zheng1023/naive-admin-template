@@ -4,10 +4,18 @@ export default {
     borderColor: 'rgb(239, 242, 245)',
     // 文字颜色
     textColor: '#0d0d0d',
+    // 次要文字颜色
+    textColor1: '#6b7280',
+    // 次次要文字颜色
+    textColor2: '#9ca3af',
     // 底色
     bgColor1: '#f5f8fa',
     // 主背景色
     bgColor2: '#fff',
+    // 次要背景色
+    bgColor3: '#f3f4f6',
+    // 次次要背景色
+    bgColor4: '',
     // 线条阴影
     boxShadow: '0px 0px 20px 0px rgba(76, 87, 125, 0.02)'
   },

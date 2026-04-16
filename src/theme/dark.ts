@@ -6,10 +6,18 @@ const config: ThemeConfigType = {
     borderColor: 'rgba(255, 255, 255, 0.09)',
     // 文字颜色
     textColor: '#fff',
+    // 次要文字颜色
+    textColor1: '#a1a5b7',
+    // 次次要文字颜色
+    textColor2: '#6b7280',
     // 底色
     bgColor1: '#151521',
     // 主背景色
     bgColor2: '#1e1e2d',
+    // 次要背景色
+    bgColor3: '#ffffff0a',
+    // 次次要背景色
+    bgColor4: '',
     // 线条阴影
     boxShadow: '0px 0px 20px 0px rgba(180, 190, 220, 0.03)'
   },

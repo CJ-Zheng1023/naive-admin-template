@@ -29,6 +29,9 @@ export const useAppStore = defineStore('appStore', {
     openedPages: [],
     menuTree: []
   }),
+  getters: {
+    isDark: state => state.theme === ThemeEnum.DARK
+  },
   actions: {
     changeCollapsed(flag: boolean) {
       this.collapsed = flag
@@ -70,6 +73,13 @@ export const useAppStore = defineStore('appStore', {
         p.fullPath = page.fullPath
       } else {
         this.openedPages.push(page)
+      }
+    },
+    updatePageNameAndIcon(path: string, name: string, icon: IconKeyType) {
+      const p = this.openedPages.find(item => item.path === path)
+      if (p) {
+        p.name = name
+        p.icon = icon
       }
     },
     updateOpenedPages(pages: Page[]) {

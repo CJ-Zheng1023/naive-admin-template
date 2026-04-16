@@ -1,6 +1,7 @@
 import { generate } from '@ant-design/colors'
+import dayjs from 'dayjs'
 import JSEncrypt from 'jsencrypt'
-import { escapeRegExp } from 'lodash-es'
+import { escapeRegExp, isNil } from 'lodash-es'
 /**
  * 获取对象key数组
  * @param obj
@@ -89,4 +90,17 @@ export const darkToLightColor = (hexColor: string) => {
       .toString(16)
       .padStart(2, '0')
   return `#${toHex(r1)}${toHex(g1)}${toHex(b1)}`
+}
+/**
+ * 计算年龄
+ * @param date
+ * @returns
+ */
+export const calculateAge = (date: number | null | undefined) => {
+  if (isNil(date)) {
+    return '-'
+  }
+  const birthDay = dayjs(date)
+  const now = dayjs()
+  return now.diff(birthDay, 'year')
 }
